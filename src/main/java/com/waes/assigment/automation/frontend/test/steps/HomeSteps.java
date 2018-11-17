@@ -1,7 +1,7 @@
-package com.waes.assigment.automation.frontend.steps;
+package com.waes.assigment.automation.frontend.test.steps;
 
-import com.waes.assigment.automation.frontend.pages.HomePage;
-import com.waes.assigment.automation.frontend.pages.SignUpPage;
+import com.waes.assigment.automation.frontend.test.pages.HomePage;
+import com.waes.assigment.automation.frontend.test.pages.SignUpPage;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
 import org.springframework.beans.factory.annotation.Autowired;

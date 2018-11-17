@@ -1,12 +1,8 @@
-package com.waes.assigment.automation.frontend.steps;
+package com.waes.assigment.automation.frontend.test.steps;
 
-import com.waes.assigment.automation.frontend.pages.SignUpPage;
-import org.jbehave.core.annotations.Given;
-import org.jbehave.core.annotations.Named;
-import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
+import com.waes.assigment.automation.frontend.test.pages.SignUpPage;
+import org.jbehave.core.annotations.*;
 import org.jbehave.core.model.ExamplesTable;
-import org.jbehave.core.steps.Parameters;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,7 +25,6 @@ public class SignUpSteps {
     @When("fill the Sign Up page with following information: $informationTable")
     public void fillSignUpPageInfo(@Named("$informationTable") ExamplesTable informationTable) {
         Map<String, String> informationToFill = informationTable.getRowsAsParameters(true).get(0).values();
-
         signUpPage.typeOnUserNameField(informationToFill.get("userName"))
                   .typeOnPasswordField(informationToFill.get("password"))
                   .typeOnNameField(informationToFill.get("name"))
@@ -45,6 +40,7 @@ public class SignUpSteps {
     }
 
     @Then("I should see the Sign Up page")
+    @Alias("I should see that I am still in the Sign Up page")
     public void shouldSeeTheSignUpPage() {
         signUpPage.waitUntilPageIsLoaded();
         Assert.assertThat(signUpPage.getCurrentUrl(), is("https://waesworks.bitbucket.io/app/signUp"));

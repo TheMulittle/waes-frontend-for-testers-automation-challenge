@@ -1,18 +1,18 @@
-package com.waes.assigment.automation.frontend.pages;
+package com.waes.assigment.automation.frontend.test.pages;
 
 
 import com.waes.assigment.automation.frontend.configuration.PageObject.PageObject;
+import com.waes.assigment.automation.frontend.test.AbstractComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @PageObject
-public class HomePage extends AbstractPage {
+public class HomePage extends AbstractComponent {
 
     @Autowired
     SignUpPage signUpPage;
@@ -28,15 +28,15 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
-    public HomePage clickOnSignUpLink() {
+    public SignUpPage clickOnSignUpLink() {
         click(signUpLink);
-        return this;
-    }
-
-    public SignUpPage clickOnLoginLink() {
-        click(loginLink);
         return signUpPage;
     }
+
+    /*public LoginPage clickOnLoginLink() {
+        click(loginLink);
+        return signUpPage;
+    }*/
 
     @Override
     protected List<WebElement> elementsToWait() {

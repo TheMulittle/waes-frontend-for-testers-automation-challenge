@@ -1,17 +1,17 @@
-package com.waes.assigment.automation.frontend.pages;
+package com.waes.assigment.automation.frontend.test.pages;
 
 
 import com.waes.assigment.automation.frontend.configuration.PageObject.PageObject;
+import com.waes.assigment.automation.frontend.test.AbstractComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @PageObject
-public class SignUpPage extends AbstractPage {
+public class SignUpPage extends AbstractComponent {
 
     @FindBy(how = How.ID, using = "username_input")
     private WebElement userNameField;
@@ -80,8 +80,8 @@ public class SignUpPage extends AbstractPage {
     @Override
     protected List<WebElement> elementsToWait() {
         List<WebElement> elementsToWait = new ArrayList<>();
-        elementsToWait.add(userNameField);
         elementsToWait.add(emailField);
+        elementsToWait.add(dayDropdown);
         return elementsToWait;
     }
 }

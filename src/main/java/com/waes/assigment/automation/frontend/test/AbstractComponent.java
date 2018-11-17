@@ -1,4 +1,4 @@
-package com.waes.assigment.automation.frontend.pages;
+package com.waes.assigment.automation.frontend.test;
 
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,20 +7,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
-public abstract class AbstractPage {
+public abstract class AbstractComponent {
 
     @Autowired
     WebDriverProvider webDriverProvider;
+
+    @Value("${DEFAULT_TIMEOUT_IN_SECONDS:10}")
+    int DEFAULT_TIMEOUT_IN_SECONDS;
 
     public String getCurrentUrl() {
         return webDriverProvider.get().getCurrentUrl();
     }
 
-    public AbstractPage waitUntilPageIsLoaded() {
-        WebDriverWait wait = new WebDriverWait(webDriverProvider.get(), 30);
+    public AbstractComponent waitUntilPageIsLoaded() {
+        WebDriverWait wait = new WebDriverWait(webDriverProvider.get(), DEFAULT_TIMEOUT_IN_SECONDS);
         wait.until(ExpectedConditions.visibilityOfAllElements(elementsToWait()));
         return this;
     }
