@@ -19,7 +19,7 @@ public class CommonStory extends AbstractStory {
     @Override
     public List<String> storyPaths() {
         List<String> paths = new StoryFinder().findPaths(
-                codeLocationFromClass(this.getClass()), "**/stories/**/*.story", "**/model/**");
+                codeLocationFromClass(this.getClass()), "**/stories/**/MissingDataSignUP.story", "**/model/**");
         return paths;
     }
 }

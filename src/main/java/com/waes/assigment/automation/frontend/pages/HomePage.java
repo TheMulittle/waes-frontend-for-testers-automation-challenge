@@ -5,6 +5,7 @@ import com.waes.assigment.automation.frontend.configuration.PageObject.PageObjec
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,6 +13,9 @@ import java.util.List;
 
 @PageObject
 public class HomePage extends AbstractPage {
+
+    @Autowired
+    SignUpPage signUpPage;
 
     @FindBy(how = How.ID, using = "signup_link")
     private WebElement signUpLink;
@@ -29,9 +33,9 @@ public class HomePage extends AbstractPage {
         return this;
     }
 
-    public HomePage clickOnLoginLink() {
+    public SignUpPage clickOnLoginLink() {
         click(loginLink);
-        return this;
+        return signUpPage;
     }
 
     @Override

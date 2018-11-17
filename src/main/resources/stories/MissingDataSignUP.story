@@ -13,7 +13,6 @@ When fill the Sign Up page with following information:
 |<userName>|<password>|<name>  |<email> |<day>|<month>|<year>|
 And I try to Sign Up
 Then I should see the New Profile page
-
 Examples:
 |<userName>|<password>|<name>|<email>    |<day>|<month>|<year>|
 |          |1234567   |Joe   |joe@joe.com|21   |01     |1984  |

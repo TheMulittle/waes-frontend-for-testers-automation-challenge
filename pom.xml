@@ -10,8 +10,9 @@
 
     <properties>
         <selenium.version>3.6.0</selenium.version>
-        <jbehave.core.version>4.3.5</jbehave.core.version>
+        <jbehave.core.version>3.8</jbehave.core.version>
         <jbehave.selenium.version>3.5.5</jbehave.selenium.version>
+        <jbehave.spring.version>4.3.5</jbehave.spring.version>
         <jbehave.site.version>3.3.1</jbehave.site.version>
         <spring.version>4.3.5.RELEASE</spring.version>
     </properties>
@@ -41,7 +42,7 @@
         <dependency>
             <groupId>org.jbehave</groupId>
             <artifactId>jbehave-spring</artifactId>
-            <version>${jbehave.core.version}</version>
+            <version>${jbehave.spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jbehave.site</groupId>

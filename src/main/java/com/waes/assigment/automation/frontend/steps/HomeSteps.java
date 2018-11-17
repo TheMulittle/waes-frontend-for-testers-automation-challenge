@@ -1,6 +1,7 @@
 package com.waes.assigment.automation.frontend.steps;
 
 import com.waes.assigment.automation.frontend.pages.HomePage;
+import com.waes.assigment.automation.frontend.pages.SignUpPage;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class HomeSteps {
     @Autowired
     HomePage homePage;
 
+    @Autowired
+    SignUpPage signUpPage;
+
     @Given("I navigate to the Home page")
     public void navigateToHomePage() {
         homePage.navigateTo();
@@ -20,7 +24,8 @@ public class HomeSteps {
     @Given("I navigate to the Sign Up page")
     public void navigateToSignUpPage() {
         homePage.navigateTo()
-                .clickOnSignUpLink();
+                .clickOnSignUpLink()
+                .waitUntilPageIsLoaded();
     }
 
     @When("I click in the Sign Up link")

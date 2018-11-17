@@ -37,39 +37,44 @@ public class SignUpPage extends AbstractPage {
     @FindBy(how = How.ID, using = "submit_button")
     private WebElement submitButton;
 
-    protected WebElement typeOnUserNameField(String text) {
+    public SignUpPage typeOnUserNameField(String text) {
         typeData(userNameField, text);
-        return userNameField;
+        return this;
     }
 
-    protected WebElement typeOnPasswordField(String text) {
+    public SignUpPage typeOnPasswordField(String text) {
         typeData(passwordField, text);
-        return passwordField;
+        return this;
     }
 
-    protected WebElement typeOnNameField(String text) {
+    public SignUpPage typeOnNameField(String text) {
         typeData(nameField, text);
-        return nameField;
+        return this;
     }
 
-    protected WebElement typeOnEmailField(String text) {
+    public SignUpPage typeOnEmailField(String text) {
         typeData(emailField, text);
-        return emailField;
+        return this;
     }
 
-    protected WebElement selectDayOfBirth(String option) {
+    public SignUpPage selectDayOfBirth(String option) {
         selectInDropdown(dayDropdown, option);
-        return dayDropdown;
+        return this;
     }
 
-    protected WebElement selectMonthOfBirth(String option) {
+    public SignUpPage selectMonthOfBirth(String option) {
         selectInDropdown(monthDropdown, option);
-        return monthDropdown;
+        return this;
     }
 
-    protected WebElement selectYearOfMonth(String option) {
+    public SignUpPage selectYearOfBirth(String option) {
         selectInDropdown(yearDropdown, option);
-        return yearDropdown;
+        return this;
+    }
+
+    public SignUpPage clickOnSubmitButton() {
+        click(submitButton);
+        return this;
     }
 
     @Override
