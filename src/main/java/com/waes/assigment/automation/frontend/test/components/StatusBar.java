@@ -2,6 +2,7 @@ package com.waes.assigment.automation.frontend.test.components;
 
 import com.waes.assigment.automation.frontend.configuration.PageObject.PageObject;
 import com.waes.assigment.automation.frontend.test.AbstractComponent;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -12,10 +13,10 @@ import java.util.List;
 @PageObject
 public class StatusBar extends AbstractComponent {
 
-    @FindBy(how = How.CSS, using = "#status p")
+    @FindBy(css = "#status p")
     private WebElement statusLabel;
 
-    @FindBy(how = How.CSS, using = "#status p a")
+    @FindBy(css = "#status p a")
     private WebElement logoutLink;
 
     public String getStatusBarText() {
@@ -34,5 +35,15 @@ public class StatusBar extends AbstractComponent {
     @Override
     protected List<WebElement> elementsToWait() {
         return null;
+    }
+
+    public boolean logoutIfLoggedIn() {
+        try {
+            clickOnLogoutLink();
+            return true;
+        } catch (NoSuchElementException e) {
+            //User is already logged out
+            return false;
+        }
     }
 }

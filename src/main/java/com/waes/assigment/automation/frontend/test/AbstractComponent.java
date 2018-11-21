@@ -58,4 +58,8 @@ public abstract class AbstractComponent {
     }
 
     protected abstract List<WebElement> elementsToWait();
+
+    public void deleteCookies() {
+        webDriverProvider.get().manage().deleteAllCookies();
+    }
 }

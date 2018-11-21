@@ -1,4 +1,6 @@
 Meta:
+@signUp
+@happyPath
 
 Narrative:
 As a user

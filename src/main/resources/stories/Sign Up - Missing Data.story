@@ -1,4 +1,6 @@
 Meta:
+@signUp
+@negative
 
 Narrative:
 As an user

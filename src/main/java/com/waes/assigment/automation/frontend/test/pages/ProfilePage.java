@@ -13,14 +13,21 @@ import java.util.List;
 @PageObject
 public class ProfilePage extends AbstractComponent {
 
-    @FindBy(how = How.XPATH, using = "//h1[text() = 'Your Profile']")
+    @FindBy(xpath = "//h1[text() = 'Your Profile']")
     private WebElement profileTitle;
 
-    @FindBy(how = How.CSS, using = "section p")
+    @FindBy(css = "section > p:nth-of-type(1)")
     private WebElement profileMessage;
+
+    @FindBy(css = "section > p:nth-of-type(2)")
+    private WebElement superPower;
 
     public String getProfileMessage() {
         return profileMessage.getText().replace("\n", "");
+    }
+
+    public String getSuperPower() {
+        return superPower.getText().replace("\n", "");
     }
 
     @Override

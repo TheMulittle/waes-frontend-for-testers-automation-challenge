@@ -13,10 +13,7 @@ public class HomeSteps {
     @Autowired
     HomePage homePage;
 
-    @Autowired
-    SignUpPage signUpPage;
-
-    @Given("I navigate to the Home page")
+     @Given("I navigate to the Home page")
     public void navigateToHomePage() {
         homePage.navigateTo();
     }
@@ -28,8 +25,15 @@ public class HomeSteps {
                 .waitUntilPageIsLoaded();
     }
 
+
     @When("I click in the Sign Up link")
     public void clickInSignUpLink() {
         homePage.clickOnSignUpLink();
+    }
+
+    @When("I click in the Login link")
+    public void clickInLoginLink() {
+        homePage.clickOnLoginLink()
+                .waitUntilPageIsLoaded();
     }
 }

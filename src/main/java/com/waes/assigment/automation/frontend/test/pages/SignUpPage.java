@@ -13,28 +13,28 @@ import java.util.List;
 @PageObject
 public class SignUpPage extends AbstractComponent {
 
-    @FindBy(how = How.ID, using = "username_input")
+    @FindBy(id = "username_input")
     private WebElement userNameField;
 
-    @FindBy(how = How.ID, using = "password_input")
+    @FindBy(id = "password_input")
     private WebElement passwordField;
 
-    @FindBy(how = How.ID, using = "name_input")
+    @FindBy(id =  "name_input")
     private WebElement nameField;
 
-    @FindBy(how = How.ID, using = "email_input")
+    @FindBy(id = "email_input")
     private WebElement emailField;
 
-    @FindBy(how = How.ID, using = "day_select")
+    @FindBy(id = "day_select")
     private WebElement dayDropdown;
 
-    @FindBy(how = How.ID, using = "month_select")
+    @FindBy(id =  "month_select")
     private WebElement monthDropdown;
 
-    @FindBy(how = How.ID, using = "year_select")
+    @FindBy(id = "year_select")
     private WebElement yearDropdown;
 
-    @FindBy(how = How.ID, using = "submit_button")
+    @FindBy(id = "submit_button")
     private WebElement submitButton;
 
     public SignUpPage typeOnUserNameField(String text) {

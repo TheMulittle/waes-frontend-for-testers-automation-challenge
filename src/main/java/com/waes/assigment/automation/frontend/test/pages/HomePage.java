@@ -11,16 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.openqa.selenium.By.className;
+
 @PageObject
 public class HomePage extends AbstractComponent {
 
     @Autowired
     SignUpPage signUpPage;
 
-    @FindBy(how = How.ID, using = "signup_link")
+    @Autowired
+    LoginPage loginPage;
+
+    @FindBy(id = "signup_link")
     private WebElement signUpLink;
 
-    @FindBy(how = How.ID, using = "login_link")
+    @FindBy(id = "login_link")
     private WebElement loginLink;
 
     public HomePage navigateTo() {
@@ -33,10 +38,10 @@ public class HomePage extends AbstractComponent {
         return signUpPage;
     }
 
-    /*public LoginPage clickOnLoginLink() {
+    public LoginPage clickOnLoginLink() {
         click(loginLink);
-        return signUpPage;
-    }*/
+        return loginPage;
+    }
 
     @Override
     protected List<WebElement> elementsToWait() {

@@ -22,6 +22,12 @@ public class ProfileSteps {
         Assert.assertThat(profilePage.getCurrentUrl(), is("https://waesworks.bitbucket.io/app/newUser"));
     }
 
+    @Then("I should see the Profile page")
+    public void shouldSeeProfilePage() {
+        profilePage.waitUntilPageIsLoaded();
+        Assert.assertThat(profilePage.getCurrentUrl(), is("https://waesworks.bitbucket.io/app/profile"));
+    }
+
     @Then("I should see the following profile message: $message")
     public void shouldSeeMessage(@Named("message") String message) {
         Assert.assertThat(profilePage.getProfileMessage(), containsString(message));
