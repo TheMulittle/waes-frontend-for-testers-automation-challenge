@@ -3,6 +3,10 @@ package com.waes.assigment.automation.frontend.configuration;
 import org.jbehave.web.selenium.PropertyWebDriverProvider;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.jbehave.web.selenium.WebDriverScreenshotOnFailure;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +26,12 @@ public class ProjectConfiguration {
         WebDriverProvider webDriverProvider = new PropertyWebDriverProvider();
         System.setProperty("browser", "chrome");
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+        /*ChromeDriver cd = (ChromeDriver) webDriverProvider.get();
+        ChromeOptions options = new ChromeOptions();
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        options.addArguments("--headless");
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        cd.getCapabilities().merge(capabilities);*/
         return webDriverProvider;
     }
 

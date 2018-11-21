@@ -13,7 +13,6 @@ When I click in the Sign Up link
 Then I should see the Sign Up page
 
 Scenario: User is able to register successfuly
-Scenario: User cannot register with missing data, future data or invalid email
 When fill the Sign Up page with following information:
 |userName  |password  |name         |email         |day  |month   |year  |
 |GO        |321645987 |George Orwell|go@oceania.com|21   |December|1984  |
@@ -32,7 +31,10 @@ And fill the Sign Up page with following information:
 And I try to Sign Up
 Then I should see that I am still in the Sign Up page
 
-!--Scenario: User is able to login after registring
-!--When I loging with user '' and ''
-!--When I do something
-!--Then system is in a different state
+Scenario: Just registered user is able to login
+Given I'm logged out
+When I click in the Login link
+And fill the Login page with following information:
+|userName|password  |
+|GO      |321645987 |
+Then I should see the Profile page

@@ -1,6 +1,7 @@
 package com.waes.assigment.automation.frontend.test;
 
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
+import java.util.Set;
 
 public abstract class AbstractComponent {
 
@@ -57,9 +59,22 @@ public abstract class AbstractComponent {
         return dropdown;
     }
 
-    protected abstract List<WebElement> elementsToWait();
-
-    public void deleteCookies() {
-        webDriverProvider.get().manage().deleteAllCookies();
+    public  void closeBrowser() {
+        webDriverProvider.get().close();
     }
+
+    public void reopenBroswer(Set<Cookie> allCookies) {
+        for(Cookie cookie : allCookies)
+        {
+            webDriverProvider.get().manage().addCookie(cookie);
+        }
+        webDriverProvider.initialize();
+        webDriverProvider.get().manage().window().maximize();
+    }
+
+    public Set<Cookie> getCookies() {
+        return webDriverProvider.get().manage().getCookies();
+    }
+
+    protected abstract List<WebElement> elementsToWait();
 }
