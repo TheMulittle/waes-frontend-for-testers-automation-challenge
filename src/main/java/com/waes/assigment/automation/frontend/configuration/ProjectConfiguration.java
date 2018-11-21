@@ -26,12 +26,6 @@ public class ProjectConfiguration {
         WebDriverProvider webDriverProvider = new PropertyWebDriverProvider();
         System.setProperty("browser", "chrome");
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
-        /*ChromeDriver cd = (ChromeDriver) webDriverProvider.get();
-        ChromeOptions options = new ChromeOptions();
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        options.addArguments("--headless");
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        cd.getCapabilities().merge(capabilities);*/
         return webDriverProvider;
     }
 

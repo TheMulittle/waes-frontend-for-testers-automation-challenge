@@ -2,7 +2,6 @@ package com.waes.assigment.automation.frontend.configuration;
 
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
-import org.jbehave.core.io.LoadFromURL;
 import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.Format;
 import org.jbehave.core.reporters.StoryReporterBuilder;
@@ -31,8 +30,8 @@ public abstract class AbstractStory extends JUnitStories {
 
         return new MostUsefulConfiguration()
                     .useStoryReporterBuilder(new StoryReporterBuilder()
-                        .withDefaultFormats()
-                        .withFormats(Format.IDE_CONSOLE, Format.STATS, WebDriverHtmlOutput.WEB_DRIVER_HTML))
+                            .withDefaultFormats()
+                            .withFormats(Format.ANSI_CONSOLE, Format.STATS, WebDriverHtmlOutput.WEB_DRIVER_HTML))
                     .useParameterControls(new ParameterControls().useDelimiterNamedParameters(true));
     }
 
