@@ -58,17 +58,20 @@ public class SignUpPage extends AbstractComponent {
     }
 
     public SignUpPage selectDayOfBirth(String option) {
-        selectInDropdown(dayDropdown, option);
+        if(!option.isEmpty())
+            selectInDropdown(dayDropdown, option);
         return this;
     }
 
     public SignUpPage selectMonthOfBirth(String option) {
-        selectInDropdown(monthDropdown, option);
+        if(!option.isEmpty())
+            selectInDropdown(monthDropdown, option);
         return this;
     }
 
     public SignUpPage selectYearOfBirth(String option) {
-        selectInDropdown(yearDropdown, option);
+        if(!option.isEmpty())
+            selectInDropdown(yearDropdown, option);
         return this;
     }
 
