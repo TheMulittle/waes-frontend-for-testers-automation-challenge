@@ -9,7 +9,9 @@ So that I can correct than and proceed
 
 
 Scenario: User cannot register with missing data, future data or invalid email
-Given I navigate to the Sign Up page
+Given I navigate to the Home page
+And I'm logged out
+When I click in the Sign Up link
 When fill the Sign Up page with following information:
 |userName  |password  |name    |email   |day  |month  |year  |
 |<userName>|<password>|<name>  |<email> |<day>|<month>|<year>|

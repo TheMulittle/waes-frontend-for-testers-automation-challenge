@@ -30,6 +30,12 @@ public class BrowserLifeCycle {
 
     @AfterStory
     public void closeBrowser() {
+        webDriverProvider.get().quit();
         webDriverProvider.end();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

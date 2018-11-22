@@ -9,6 +9,7 @@ So that I can leverage the system usefulness
 
 Scenario: User is able to access the sign up page
 Given I navigate to the Home page
+And I'm logged out
 When I click in the Sign Up link
 Then I should see the Sign Up page
 
