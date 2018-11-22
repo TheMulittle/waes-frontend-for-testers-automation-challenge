@@ -37,6 +37,7 @@ A short report of is found [here](Front End Report.pdf)
 
 ## About the code and some assumptions
 
+* I assumed that the test pyramid was going to be follwed so there are more tests for the backend than for the frontend
 * The pattern used for coding was the PO (Page Object) pattern which makes strong sense when it comes for UI testing. 
 * The Fluent pattern also was used. It tends to shorten the amount of code written and make the code clearer
 when many operations need to be performed in more complex steps
