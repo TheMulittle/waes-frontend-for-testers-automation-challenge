@@ -25,3 +25,19 @@ mvn clean verify
 
 * `mvn` executes the goals
 * `clean` is a built-in task that erases target folder and `verify` task executes the tests
+
+## Found defects
+
+A short report of is found [here](Front End Report.pdf)
+
+## Possible improvements
+
+* Define better restrictions for field lengths (such as: password should be at maximum X characters and at minimum Y)
+* Better date restriction like restricting invalid or future dates.
+
+## About the code and some assumptions
+
+* The pattern used for coding was the PO (Page Object) pattern which makes strong sense when it comes for UI testing. 
+* The Fluent pattern also was used. It tends to shorten the amount of code written and make the code clearer
+when many operations need to be performed in more complex steps
+* I assumed that I could not use API calls in the front end testing, so all the data setup is done in execution time

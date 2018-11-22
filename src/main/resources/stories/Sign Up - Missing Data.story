@@ -24,7 +24,6 @@ Examples:
 |joel      |1234567   |      |joe@joe.com|21   |March   |1984  |
 |joel      |1234567   |Joe   |           |21   |March   |1984  |
 |joel      |1234567   |Joe   |joe@joe.com|     |March   |1984  |
-|joel      |1234567   |Joe   |joe@joe.com|21   |March   |1984  |
 |joel      |1234567   |Joe   |joe@joe.com|21   |        |1984  |
 |joel      |1234567   |Joe   |joe@joe.com|21   |March   |      |
 
