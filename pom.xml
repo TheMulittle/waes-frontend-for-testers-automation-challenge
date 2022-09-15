@@ -10,11 +10,13 @@
 
     <properties>
         <selenium.version>3.6.0</selenium.version>
-        <jbehave.core.version>3.8</jbehave.core.version>
         <jbehave.selenium.version>3.6-beta-2</jbehave.selenium.version>
-        <jbehave.spring.version>4.3.5</jbehave.spring.version>
+        <jbehave.core.version>4.8.3</jbehave.core.version>
+        <jbehave.selenium.version>3.5.5</jbehave.selenium.version>
+        <jbehave.spring.version>4.8.3</jbehave.spring.version>
         <jbehave.site.version>3.3.1</jbehave.site.version>
-        <spring.version>4.3.5.RELEASE</spring.version>
+        <spring.version>5.3.8</spring.version>
+        <jbehave.navigator.version>4.8.3</jbehave.navigator.version>
     </properties>
 
     <dependencies>
@@ -65,11 +67,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
                 <configuration>
-                    <compilerVersion>1.8</compilerVersion>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+                    <source>16</source>
+                    <target>16</target>
+                 </configuration>
             </plugin>
 
             <plugin>
@@ -91,7 +93,7 @@
                                 <artifactItem>
                                     <groupId>org.jbehave</groupId>
                                     <artifactId>jbehave-navigator</artifactId>
-                                    <version>${jbehave.core.version}</version>
+                                    <version>${jbehave.navigator.version}</version>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
